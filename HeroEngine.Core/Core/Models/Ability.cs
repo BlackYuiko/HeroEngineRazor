@@ -36,22 +36,22 @@ namespace HeroEngine.Core.Models
             switch (Type)
             {
                 case AbilityType.Attack:
-                    int attack = (int)(UIConfig.Ability.BaseAttack * multiplier);
+                    int attack = (int)(UIConfig.AbilityUI.BaseAttack * multiplier);
                     hero.AbilityAttack(attack, target);
                     break;
 
                 case AbilityType.Healing:
-                    int heal = (int)(UIConfig.Ability.BaseHeal * multiplier);
+                    int heal = (int)(UIConfig.AbilityUI.BaseHeal * multiplier);
                     hero.AbilityHeal(heal);
                     break;
 
                 case AbilityType.Defense:
-                    int defense = (int)(UIConfig.Ability.BaseDefense * multiplier);
+                    int defense = (int)(UIConfig.AbilityUI.BaseDefense * multiplier);
                     hero.AbilityDefense(defense);
                     break;
 
                 case AbilityType.Support:
-                    string msgSupport = UIConfig.Ability.MsgSupport;
+                    string msgSupport = UIConfig.AbilityUI.MsgSupport;
                     hero.AbilitySupport(msgSupport);
                     break;
             }
@@ -66,11 +66,11 @@ namespace HeroEngine.Core.Models
         {
             return rarity switch
             {
-                AbilityRarity.Common => UIConfig.Ability.RarityCommonMultiplier,
-                AbilityRarity.Rare => UIConfig.Ability.RarityRareMultiplier,
-                AbilityRarity.Epic => UIConfig.Ability.RarityEpicMultiplier,
-                AbilityRarity.Legendary => UIConfig.Ability.RarityLegendaryMultiplier,
-                _ => UIConfig.Ability.RarityBaseMultiplier
+                AbilityRarity.Common => UIConfig.AbilityUI.RarityCommonMultiplier,
+                AbilityRarity.Rare => UIConfig.AbilityUI.RarityRareMultiplier,
+                AbilityRarity.Epic => UIConfig.AbilityUI.RarityEpicMultiplier,
+                AbilityRarity.Legendary => UIConfig.AbilityUI.RarityLegendaryMultiplier,
+                _ => UIConfig.AbilityUI.RarityBaseMultiplier
             };
         }
 

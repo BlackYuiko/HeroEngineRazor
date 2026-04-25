@@ -4,28 +4,35 @@
     ViewData["Title"] = "Combat Arena";
 }
 
-<div class="text-center mb-4">
-    <h2>Combat Arena</h2>
-    <p>Press the button to start a simulation between registered heroes and enemies.</p>
+<div class="container mt-4">
+    <h2 class="mb-4">⚔️ Combat Arena</h2>
 
-    <form method="post" asp-page-handler="Simulate">
-        <button type="submit" class="btn btn-danger btn-lg">Start Combat!</button>
-    </form>
-</div>
-
-@if (Model.CombatLogs != null && Model.CombatLogs.Count > 0)
-{
-    <div class="card bg-dark text-light mt-4">
-        <div class="card-header">
-            <h4>Battle Log</h4>
-        </div>
-        <div class="card-body" style="max-height: 500px; overflow-y: auto;">
-            <ul class="list-unstyled">
-                @foreach (var log in Model.CombatLogs)
-                {
-                    <li class="mb-1" style="font-family: monospace;">> @log</li>
-                }
-            </ul>
+    <div class="row mb-4">
+        <div class="col">
+            <p>Initiate a combat sequence using the registered heroes against random enemies. Results are saved to the Chronicle Keeper's archives.</p>
+            <form method="post" asp-page-handler="Simulate">
+                <button type="submit" class="btn btn-danger btn-lg shadow">Start Combat</button>
+            </form>
         </div>
     </div>
-}
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card bg-dark text-white shadow">
+                <div class="card-header border-bottom border-secondary">
+                    <h5 class="mb-0 text-success">📜 Last Combat Log </h5>
+                </div>
+                <div class="card-body">
+                    @if (!string.IsNullOrEmpty(Model.LastCombatLog))
+                    {
+                        <pre style="color: #00ff00; font-family: 'Courier New', Courier, monospace; white-space: pre-wrap;">@Model.LastCombatLog</pre>
+                    }
+                    else
+                    {
+                        <p class="text-muted mb-0">No combat records found yet. Start a combat to generate the log file.</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

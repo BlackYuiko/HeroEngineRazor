@@ -1,4 +1,5 @@
-﻿using HeroEngine.Interfaces;
+﻿using HeroEngine.Core.Managers;
+using HeroEngine.Interfaces;
 using HeroEngine.UI;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,9 @@ namespace HeroEngine.Core.Models
     {
         public Minion(string name) : base(name)
         {
-            MaxHP = UIConfig.Minion.MinionBaseHP;
+            var config = ConfigManager.LoadConfig();
+
+            MaxHP = (int)(UIConfig.Minion.MinionBaseHP * config.EnemyHpMultiplier);
             CurrentHP = MaxHP;
             Damage = UIConfig.Minion.MinionBaseDmg;
         }

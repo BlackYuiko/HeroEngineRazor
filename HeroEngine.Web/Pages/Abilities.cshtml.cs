@@ -1,26 +1,20 @@
 using HeroEngine.Core.Enums;
 using HeroEngine.Core.Managers;
 using HeroEngine.Core.Models;
-using HeroEngine.Interfaces;
-using HeroEngine.UI; // Assuming UIConfig is here
+using HeroEngine.UI;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Collections.Generic;
+using System.Collections.Generic; // Asegúrate de tener este para List<>
 
-namespace HeroEngine.Web.Pages
+namespace HeroEngine.Web.Pages 
 {
     public class AbilitiesModel : PageModel
     {
-        public List<IAbility> AbilitiesList { get; set; } = new List<IAbility>();
+        public List<Ability> AbilitiesList { get; set; } = new List<Ability>();
 
-        [BindProperty]
-        public string AbilityName { get; set; }
-
-        [BindProperty]
-        public AbilityType SelectedType { get; set; }
-
-        [BindProperty]
-        public AbilityRarity SelectedRarity { get; set; }
+        [BindProperty] public string AbilityName { get; set; }
+        [BindProperty] public AbilityType SelectedType { get; set; }
+        [BindProperty] public AbilityRarity SelectedRarity { get; set; }
 
         public void OnGet()
         {
@@ -35,11 +29,10 @@ namespace HeroEngine.Web.Pages
                 return Page();
             }
 
-            // Calculate ManaCost based on your original AbilityMenu logic
             int manaCost = (int)(UIConfig.AbilityMenu.BaseManaCost * Ability.GetRarityMultiplier(SelectedRarity));
 
-            // Create and add the new ability
             var newAbility = new Ability(AbilityName, manaCost, SelectedType, SelectedRarity);
+
             AbilityManager.AddAbility(newAbility);
 
             return RedirectToPage();

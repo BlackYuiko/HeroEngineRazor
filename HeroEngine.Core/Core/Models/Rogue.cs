@@ -1,4 +1,5 @@
-﻿using HeroEngine.Core.Services;
+﻿using HeroEngine.Core.Managers;
+using HeroEngine.Core.Services;
 using HeroEngine.Interfaces;
 using HeroEngine.UI;
 using System;
@@ -13,15 +14,18 @@ namespace HeroEngine.Core.Models
         private double DmgMultiplier { get; set; }
         private static int HiddenWeapons { get; set; } = 3;
 
+
         public Rogue(string name, int level) : base(name, level)
         {
+            var config = ConfigManager.LoadConfig();
+
             int baseHP = UIConfig.Rogue.RogueBaseHP;
             int baseDamage = UIConfig.Rogue.RogueBaseDmg;
             double baseCritDamage = UIConfig.Rogue.RogueBaseDmgMultiplier;
 
-            MaxHP = baseHP + (level * UIConfig.Rogue.RogueHPPerLevel);
-            DmgAttack = baseDamage + (level * UIConfig.Rogue.RogueDmgPerLevel);
-            DmgMultiplier = baseCritDamage + (level * UIConfig.Rogue.RogueDmgMultiplierPerLevel);
+            MaxHP = baseHP + (int)(level * UIConfig.Rogue.RogueHPPerLevel * config.LevelMultiplier);
+            DmgAttack = baseDamage + (int)(level * UIConfig.Rogue.RogueDmgPerLevel * config.LevelMultiplier);
+            DmgMultiplier = baseCritDamage + (level * UIConfig.Rogue.RogueDmgMultiplierPerLevel * config.LevelMultiplier);
 
             CurrentHP = MaxHP;
         }

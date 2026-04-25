@@ -10,4 +10,8 @@
     <ProjectReference Include="..\HeroEngine.Core\HeroEngine.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
+
 </Project>

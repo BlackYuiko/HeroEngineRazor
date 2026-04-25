@@ -1,4 +1,5 @@
-﻿using HeroEngine.Core.Services;
+﻿using HeroEngine.Core.Managers;
+using HeroEngine.Core.Services;
 using HeroEngine.Interfaces;
 using HeroEngine.UI;
 using System;
@@ -15,13 +16,15 @@ namespace HeroEngine.Core.Models
 
         public Warrior(string name, int level) : base(name, level) 
         {
+            var config = ConfigManager.LoadConfig();
+
             int baseHP = UIConfig.Warrior.WarriorBaseHP;
             int baseArmor = UIConfig.Warrior.WarriorBaseArmor;
             int baseDamage = UIConfig.Warrior.WarriorBaseDmg;
 
-            MaxHP = baseHP + (level * UIConfig.Warrior.WarriorHPPerLevel);
+            MaxHP = baseHP + (int)(level * UIConfig.Warrior.WarriorHPPerLevel * config.LevelMultiplier);
             Armor = baseArmor + (level * UIConfig.Warrior.WarriorArmorPerLevel);
-            DmgAttack = baseDamage + (level * UIConfig.Warrior.WarriorDmgPerLevel);
+            DmgAttack = baseDamage + (int)(level * UIConfig.Warrior.WarriorDmgPerLevel * config.LevelMultiplier);
 
             CurrentHP = MaxHP;
         }

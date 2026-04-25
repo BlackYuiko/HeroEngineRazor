@@ -1,31 +1,32 @@
-﻿using HeroEngine.Interfaces;
-using System;
+﻿using HeroEngine.Core.Data;
+using HeroEngine.Core.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace HeroEngine.Core.Managers
 {
-    /// <summary>
-    /// Provides management functionality for abilities within the system.
-    /// </summary>
     public static class AbilityManager
     {
-        private static readonly List<IAbility> Abilities = new List<IAbility>();
+        private static readonly AbilityRepository _repository = new AbilityRepository();
+        private static List<Ability> _abilitiesCache = new List<Ability>();
 
-        /// <summary>
-        /// Adds a new ability to the global ability list.
-        /// </summary>
-        /// <param name="ability">The ability to be added.</param>
-        public static void AddAbility(IAbility ability)
+        public static void Initialize()
         {
-            Abilities.Add(ability);
+            _abilitiesCache = _repository.LoadAll();
         }
 
-        /// <summary>
-        /// Retrieves the list of all registered abilities.
-        /// </summary>
-        /// <returns>A list containing all abilities.</returns>
-        public static List<IAbility> GetAbilities()
+        public static void AddAbility(Ability ability)
         {
-            return Abilities;
+            // Guardar en memoria
+            _abilitiesCache.Add(ability);
+            // Guardar en JSON (El repo ya comprueba si existe)
+            _repository.Add(ability);
+        }
+
+        public static List<Ability> GetAbilities()
+        {
+            if (_abilitiesCache.Count == 0) Initialize();
+            return _abilitiesCache;
         }
     }
 }

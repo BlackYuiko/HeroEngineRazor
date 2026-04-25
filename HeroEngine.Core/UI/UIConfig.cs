@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HeroEngine.Core.Managers;
+using System;
 
 namespace HeroEngine.UI
 {
@@ -144,7 +145,7 @@ namespace HeroEngine.UI
         /// <summary>
         /// Configuration values for ability scaling, effects, and damage calculations.
         /// </summary>
-        public static class Ability
+        public static class AbilityUI
         {
             public const int BaseHeal = 30;
             public const int BaseDefense = 30;

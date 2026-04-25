@@ -1,5 +1,7 @@
-﻿using HeroEngine.Core.Models;
+﻿using HeroEngine.Core.Data;
+using HeroEngine.Core.Models;
 using System;
+using static HeroEngine.UI.UIConfig;
 
 namespace HeroEngine.Core.Managers
 {
@@ -8,7 +10,14 @@ namespace HeroEngine.Core.Managers
     /// </summary>
     public static class HeroManager
     {
-        private static readonly List<AHeroes> Heroes = new List<AHeroes>();
+        private static readonly HeroRepository _repository = new HeroRepository();
+        private static List<AHeroes> _heroesCache = new List<AHeroes>();
+
+
+        public static void Initialize()
+        {
+            _heroesCache = _repository.LoadAll();
+        }
 
         /// <summary>
         /// Adds a new hero to the global hero list.
@@ -16,7 +25,8 @@ namespace HeroEngine.Core.Managers
         /// <param name="hero">The hero to be added.</param>
         public static void AddHero(AHeroes hero)
         {
-            Heroes.Add(hero);
+            _heroesCache.Add(hero);
+            _repository.Add(hero); // Saves to JSON automatically
         }
 
         /// <summary>
@@ -25,7 +35,41 @@ namespace HeroEngine.Core.Managers
         /// <returns>A list containing all heroes.</returns>
         public static List<AHeroes> GetHeroes()
         {
-            return Heroes;
+            // If cache is empty, try loading from file
+            if (_heroesCache.Count == 0)
+            {
+                Initialize();
+            }
+            return _heroesCache;
+        }
+
+        public static void DeleteHero(string name)
+        {
+            _heroesCache.RemoveAll(h => h.Name == name);
+            _repository.Delete(name); // Deletes from JSON
+        }
+
+        /// <summary>
+        /// Equips an ability to a specific hero and updates the JSON file.
+        /// </summary>
+        public static void EquipAbilityToHero(string heroName, Ability newAbility)
+        {
+            var hero = _heroesCache.FirstOrDefault(h => h.Name.Equals(heroName, StringComparison.OrdinalIgnoreCase));
+
+            if (hero != null)
+            {
+                // 1. Añadimos a la lista del objeto en memoria
+                if (hero.Abilities == null) hero.Abilities = new List<Ability>();
+
+                // Evitar duplicados
+                if (!hero.Abilities.Any(a => a.Name == newAbility.Name))
+                {
+                    hero.Abilities.Add(newAbility);
+                }
+
+                // 2. Persistencia: Guardamos toda la caché en el JSON
+                _repository.SaveAll(_heroesCache);
+            }
         }
     }
 }

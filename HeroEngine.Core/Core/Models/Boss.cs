@@ -1,4 +1,5 @@
-﻿using HeroEngine.Interfaces;
+﻿using HeroEngine.Core.Managers;
+using HeroEngine.Interfaces;
 using HeroEngine.UI;
 using System;
 namespace HeroEngine.Core.Models
@@ -11,7 +12,8 @@ namespace HeroEngine.Core.Models
         /// </summary>
         public Boss(string name) : base(name)
         {
-            MaxHP = UIConfig.Boss.BossBaseHP;
+            var config = ConfigManager.LoadConfig();
+            MaxHP = (int)(UIConfig.Boss.BossBaseHP * config.EnemyHpMultiplier);
             CurrentHP = MaxHP;
             Damage = UIConfig.Boss.BossBaseDmg;
         }

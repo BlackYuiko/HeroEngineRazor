@@ -1,4 +1,5 @@
-﻿using HeroEngine.Interfaces;
+﻿using HeroEngine.Core.Managers;
+using HeroEngine.Interfaces;
 using HeroEngine.UI;
 using System;
 
@@ -12,7 +13,9 @@ namespace HeroEngine.Core.Models
     {
         public Elite(string name) : base(name)
         {
-            MaxHP = UIConfig.Elite.EliteBaseHP;
+            var config = ConfigManager.LoadConfig();
+
+            MaxHP = (int)(UIConfig.Elite.EliteBaseHP * config.EnemyHpMultiplier);
             CurrentHP = MaxHP;
             Damage = UIConfig.Elite.EliteBaseDmg;
         }

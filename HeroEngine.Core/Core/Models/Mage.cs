@@ -1,50 +1,51 @@
-﻿using HeroEngine.Core.Services;
+﻿using HeroEngine.Core.Managers;
+using HeroEngine.Core.Services;
 using HeroEngine.Interfaces;
 using HeroEngine.UI;
-using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.Json.Serialization;
 
 namespace HeroEngine.Core.Models
 {
-    /// <summary>
-    /// Represents a Mage hero class focused on magical abilities and high damage output.
-    /// Relies on abilities rather than basic attacks for effectiveness.
-    /// </summary>
     public class Mage : AHeroes, IAbilityUser
     {
         public int Mana { get; set; }
-
         public int CurrentMana { get; set; }
-        private static int WeaponLevel { get; set; } = 5;
+        public static int WeaponLevel { get; set; } = 5;
 
-        private List<IAbility> abilities = new();
+        // 1. EL TRUCO MAESTRO: Implementación explícita de la interfaz.
+        // Esto complace a 'IAbilityUser' sin crear una propiedad que confunda al JSON 
+        // ni choque con la lista pública 'Abilities' de 'AHeroes'.
+        [JsonIgnore]
+        IReadOnlyList<IAbility> IAbilityUser.Abilities => this.Abilities.Cast<IAbility>().ToList();
 
-        public IReadOnlyList<IAbility> Abilities => abilities;
-
+        [JsonConstructor]
         public Mage(string name, int level) : base(name, level)
         {
+            var config = ConfigManager.LoadConfig();
             int baseHP = UIConfig.Mage.MageBaseHP;
             int baseMana = UIConfig.Mage.MageBaseMana;
             int baseDamage = UIConfig.Mage.MageBaseDmg;
 
-            MaxHP = baseHP + (level * UIConfig.Mage.MageHPPerLevel);
-            Mana = baseMana + (level * UIConfig.Mage.MageManaPerLevel);
-            DmgAttack = baseDamage + (level * UIConfig.Mage.MageDmgPerLevel);
+            MaxHP = baseHP + (int)(level * UIConfig.Mage.MageHPPerLevel * config.LevelMultiplier);
+            Mana = baseMana + (int)(level * UIConfig.Mage.MageManaPerLevel * config.LevelMultiplier);
+            DmgAttack = baseDamage + (int)(level * UIConfig.Mage.MageDmgPerLevel * config.LevelMultiplier);
 
             CurrentHP = MaxHP;
             CurrentMana = Mana;
         }
+
         public void AddAbility(IAbility ability)
         {
-            bool alreadyHasAbility = abilities.Any(a => a.Name == ability.Name);
-
-            if (alreadyHasAbility)
+            if (ability is Ability concreteAbility)
             {
-                CombatLogger.AddLog($"{Name} already has the ability {ability.Name}.");
-                return;
+                // 2. Usamos directamente la lista heredada de la clase base (AHeroes)
+                if (!this.Abilities.Any(a => a.Name == concreteAbility.Name))
+                {
+                    this.Abilities.Add(concreteAbility);
+                }
             }
-
-            abilities.Add(ability);
-            CombatLogger.AddLog($"\n{ability.Name} assigned to {Name}.");
         }
 
         public void UseAbility(IAbility ability, ICombatant target)
@@ -69,13 +70,14 @@ namespace HeroEngine.Core.Models
             CombatLogger.AddLog($"Level: {Level}, HP: {CurrentHP}/{MaxHP}, Mana: {CurrentMana}/{Mana}, Damage: {DmgAttack}, Weapon Level: {WeaponLevel}");
             CombatLogger.AddLog(UIConfig.General.MsgAbilities);
 
-            if (!abilities.Any())
+            // 3. Leemos directamente la lista heredada para mostrar las habilidades
+            if (!this.Abilities.Any())
             {
                 CombatLogger.AddLog(UIConfig.General.MsgAbilitiesNone);
             }
             else
             {
-                foreach (var ability in abilities.OrderByDescending(a => a.Rarity).ToList())
+                foreach (var ability in this.Abilities.OrderByDescending(a => a.Rarity).ToList())
                 {
                     CombatLogger.AddLog($" - {ability.Name} [{ability.Rarity}]");
                 }
@@ -87,12 +89,11 @@ namespace HeroEngine.Core.Models
             if (!enemies.Any()) return;
 
             var target = enemies.First();
-            CombatLogger.AddLog($"{Name}'s turn.");
 
-            // LÓGICA AUTOMÁTICA (AUTO-BATTLER) EN LUGAR DE CONSOLE.READLINE
-            if (this is IAbilityUser abilityUser && abilityUser.Abilities.Any())
+            // 4. Comprobamos la lista heredada para la lógica del auto-batallador
+            if (this.Abilities.Any())
             {
-                var castableAbility = abilityUser.Abilities.FirstOrDefault(a => CurrentMana >= a.ManaCost);
+                var castableAbility = this.Abilities.FirstOrDefault(a => CurrentMana >= a.ManaCost);
 
                 if (castableAbility != null)
                 {
@@ -100,7 +101,7 @@ namespace HeroEngine.Core.Models
                     return;
                 }
             }
-            
+
             BasicAttack(target);
         }
 
