@@ -1,0 +1,52 @@
+﻿@page
+@model HeroEngine.Web.Pages.AssignAbilityModel
+@{
+    ViewData["Title"] = "Assign Abilities";
+}
+
+<h3>Assign Ability to Hero</h3>
+
+@if (!string.IsNullOrEmpty(Model.StatusMessage))
+{
+    <div class="alert alert-info">
+        @Model.StatusMessage
+    </div>
+}
+
+@if (Model.EligibleHeroes.Count == 0 || Model.AvailableAbilities.Count == 0)
+{
+    <div class="alert alert-warning">
+        You need at least one Magic User (like a Mage) and one Ability created before assigning.
+    </div>
+}
+else
+{
+    <form method="post" class="w-50">
+        <div class="mb-3">
+            <label>Select Hero (Magic Users Only)</label>
+            <select asp-for="SelectedHeroName" class="form-select">
+                @foreach (var hero in Model.EligibleHeroes)
+                {
+                    // Casting to AHeroes to access the Name property
+                    var heroModel = hero as HeroEngine.Core.Models.AHeroes;
+                    if (heroModel != null)
+                    {
+                        <option value="@heroModel.Name">@heroModel.Name</option>
+                    }
+                }
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label>Select Ability</label>
+            <select asp-for="SelectedAbilityName" class="form-select">
+                @foreach (var ability in Model.AvailableAbilities)
+                {
+                    <option value="@ability.Name">@ability.Name (@ability.ManaCost Mana)</option>
+                }
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Assign to Hero</button>
+    </form>
+}

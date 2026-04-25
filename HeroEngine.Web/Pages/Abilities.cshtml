@@ -1,0 +1,59 @@
+﻿@page
+@model HeroEngine.Web.Pages.AbilitiesModel
+@{
+    ViewData["Title"] = "Manage Abilities";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <h3>Create New Ability</h3>
+        <form method="post">
+            <div class="mb-3">
+                <label>Ability Name</label>
+                <input type="text" asp-for="AbilityName" class="form-control" required />
+            </div>
+            <div class="mb-3">
+                <label>Type</label>
+                <select asp-for="SelectedType" class="form-select">
+                    <option value="Attack">Attack</option>
+                    <option value="Defense">Defense</option>
+                    <option value="Healing">Healing</option>
+                    <option value="Support">Support</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label>Rarity</label>
+                <select asp-for="SelectedRarity" class="form-select">
+                    <option value="Common">Common</option>
+                    <option value="Rare">Rare</option>
+                    <option value="Epic">Epic</option>
+                    <option value="Legendary">Legendary</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-success">Forge Ability</button>
+        </form>
+    </div>
+
+    <div class="col-md-8">
+        <h3>Available Abilities</h3>
+        @if (Model.AbilitiesList.Count == 0)
+        {
+            <p class="text-muted">No abilities created yet.</p>
+        }
+        else
+        {
+            <ul class="list-group">
+                @foreach (var ability in Model.AbilitiesList)
+                {
+                    <li class="list-group-item">
+                        <strong>@ability.Name</strong>
+                        <span class="badge bg-primary">@ability.Type</span>
+                        <span class="badge bg-warning text-dark">@ability.Rarity</span>
+                        <br />
+                        <small>Mana Cost: @ability.ManaCost</small>
+                    </li>
+                }
+            </ul>
+        }
+    </div>
+</div>

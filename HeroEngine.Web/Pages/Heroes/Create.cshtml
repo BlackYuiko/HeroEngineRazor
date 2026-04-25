@@ -1,0 +1,26 @@
+﻿@page
+@model HeroEngine.Web.Pages.Heroes.CreateModel
+@{
+    ViewData["Title"] = "Create Hero";
+}
+
+<h3>Create New Hero</h3>
+<form method="post" class="w-50">
+    <div class="mb-3">
+        <label>Hero Name</label>
+        <input type="text" asp-for="HeroName" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label>Class</label>
+        <select asp-for="HeroClassType" class="form-select">
+            <option value="1">Warrior</option>
+            <option value="2">Mage</option>
+            <option value="3">Rogue</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label>Level</label>
+        <input type="number" asp-for="HeroLevel" class="form-control" min="1" max="3" value="1" required />
+    </div>
+    <button type="submit" class="btn btn-success">Save Hero</button>
+</form>

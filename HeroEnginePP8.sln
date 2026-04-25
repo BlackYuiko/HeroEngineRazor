@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37111.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeroEngine.Core", "HeroEngine.Core\HeroEngine.Core.csproj", "{1D157140-DAC0-19F7-5E6C-3938A9E92F0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeroEngine.Web", "HeroEngine.Web\HeroEngine.Web.csproj", "{AD5EEE1D-1A29-2DD3-A099-75242BE1EC8D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D157140-DAC0-19F7-5E6C-3938A9E92F0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D157140-DAC0-19F7-5E6C-3938A9E92F0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D157140-DAC0-19F7-5E6C-3938A9E92F0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D157140-DAC0-19F7-5E6C-3938A9E92F0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD5EEE1D-1A29-2DD3-A099-75242BE1EC8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD5EEE1D-1A29-2DD3-A099-75242BE1EC8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD5EEE1D-1A29-2DD3-A099-75242BE1EC8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD5EEE1D-1A29-2DD3-A099-75242BE1EC8D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {590D7096-9044-49B9-AA3B-AD94C6A0670C}
+	EndGlobalSection
+EndGlobal

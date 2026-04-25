@@ -1,0 +1,31 @@
+﻿@page
+@model HeroEngine.Web.Pages.CombatModel
+@{
+    ViewData["Title"] = "Combat Arena";
+}
+
+<div class="text-center mb-4">
+    <h2>Combat Arena</h2>
+    <p>Press the button to start a simulation between registered heroes and enemies.</p>
+
+    <form method="post" asp-page-handler="Simulate">
+        <button type="submit" class="btn btn-danger btn-lg">Start Combat!</button>
+    </form>
+</div>
+
+@if (Model.CombatLogs != null && Model.CombatLogs.Count > 0)
+{
+    <div class="card bg-dark text-light mt-4">
+        <div class="card-header">
+            <h4>Battle Log</h4>
+        </div>
+        <div class="card-body" style="max-height: 500px; overflow-y: auto;">
+            <ul class="list-unstyled">
+                @foreach (var log in Model.CombatLogs)
+                {
+                    <li class="mb-1" style="font-family: monospace;">> @log</li>
+                }
+            </ul>
+        </div>
+    </div>
+}

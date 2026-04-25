@@ -1,0 +1,56 @@
+﻿@page "{name}"
+@model HeroEngine.Web.Pages.Heroes.DetailModel
+@{
+    ViewData["Title"] = "Hero Details";
+}
+
+<h2>Hero Profile: @Model.Hero.Name</h2>
+<div class="card w-50">
+    <div class="card-body">
+        <h5 class="card-title">Class: @Model.Hero.GetType().Name</h5>
+        <p class="card-text">
+            <strong>HP:</strong> @Model.Hero.CurrentHP / @Model.Hero.MaxHP<br />
+
+            <strong>Base Attack:</strong> @Model.Hero.GetType().GetProperty("DmgAttack", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public)?.GetValue(Model.Hero)
+
+            @if (Model.Hero is HeroEngine.Core.Models.Mage mage)
+            {
+            <br /><strong>Current Mana:</strong> @mage.CurrentMana
+                <strong> / </strong> 
+                @mage.Mana
+            }
+            else if (Model.Hero is HeroEngine.Core.Models.Warrior warrior)
+            {
+                <br />
+                <strong>Armor:</strong>
+ 
+                @warrior.Armor
+            }
+        </p>
+
+        <hr />
+        <h6>Abilities:</h6>
+        @if (Model.Hero is HeroEngine.Interfaces.IAbilityUser abilityUser)
+        {
+            if (abilityUser.Abilities.Count == 0)
+            {
+                <p class="text-muted">This hero has no abilities equipped.</p>
+            }
+            else
+            {
+                <ul>
+                    @foreach (var ability in abilityUser.Abilities)
+                    {
+                        <li>@ability.Name (@ability.Type) - Mana Cost: @ability.ManaCost</li>
+                    }
+                </ul>
+            }
+        }
+        else
+        {
+            <p class="text-muted">This hero class cannot use magic abilities.</p>
+        }
+    </div>
+</div>
+<br />
+<a asp-page="/Heroes/Index" class="btn btn-secondary">Back to Roster</a>

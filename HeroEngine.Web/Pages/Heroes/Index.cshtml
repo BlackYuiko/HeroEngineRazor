@@ -1,0 +1,29 @@
+﻿@page
+@model HeroEngine.Web.Pages.Heroes.IndexModel
+@{
+    ViewData["Title"] = "Heroes List";
+}
+
+<h3>Heroes in the Tavern</h3>
+<a asp-page="/Heroes/Create" class="btn btn-primary mb-3">Register New Hero</a>
+
+@if (Model.HeroesList.Count == 0)
+{
+    <p class="text-muted">No heroes registered yet.</p>
+}
+else
+{
+    <ul class="list-group w-50">
+        @foreach (var hero in Model.HeroesList)
+        {
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                    <strong>@hero.Name</strong> - <span class="badge bg-secondary">@hero.GetType().Name</span>
+                    <br />
+                    <small>Level: @hero.GetType().GetProperty("Level", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)?.GetValue(hero) | HP: @hero.CurrentHP</small>
+                </div>
+                <a asp-page="/Heroes/Detail" asp-route-name="@hero.Name" class="btn btn-sm btn-info">Details</a>
+            </li>
+        }
+    </ul>
+}

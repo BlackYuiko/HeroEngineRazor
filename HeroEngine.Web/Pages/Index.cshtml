@@ -1,0 +1,27 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Kingdom's Gate";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to HeroEngine Web</h1>
+</div>
+
+<hr />
+
+<h3>Heros</h3>
+@if (Model.RecentHeroes.Any())
+{
+    <ul>
+        @foreach (var hero in Model.RecentHeroes)
+        {
+            <li>@hero.Name (HP: @hero.CurrentHP/@hero.MaxHP)</li>
+        }
+    </ul>
+}
+else
+{
+    <p>There is no heroes created yet.</p>
+    <a asp-page="/Heroes/Create" class="btn btn-primary">Create a Hero!</a>
+}
