@@ -14,7 +14,7 @@ namespace HeroEngine.Web.Pages
             var allHeroes = HeroManager.GetHeroes();
             TotalHeroes = allHeroes.Count;
 
-            RecentHeroes = allHeroes.Take(10).ToList();
+            RecentHeroes = allHeroes.Take(3).ToList();
         }
     }
 }

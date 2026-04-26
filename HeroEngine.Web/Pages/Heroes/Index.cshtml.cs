@@ -1,5 +1,6 @@
 using HeroEngine.Core.Managers;
 using HeroEngine.Core.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace HeroEngine.Web.Pages.Heroes
@@ -11,6 +12,16 @@ namespace HeroEngine.Web.Pages.Heroes
         public void OnGet()
         {
             HeroesList = HeroManager.GetHeroes();
+        }
+
+        public IActionResult OnPostDelete(string name)
+        {
+            if (!string.IsNullOrEmpty(name))
+            {
+                HeroManager.DeleteHero(name);
+            }
+
+            return RedirectToPage();
         }
     }
 }

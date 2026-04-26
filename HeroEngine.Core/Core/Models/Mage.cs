@@ -58,25 +58,6 @@ namespace HeroEngine.Core.Models
             CombatLogger.AddLog($" {Name}'s new Mana: {CurrentMana}/{Mana}");
         }
 
-        public override void Presentation()
-        {
-            CombatLogger.AddLog($"==={Name}'s STATS===");
-            CombatLogger.AddLog($"Level: {Level}, HP: {CurrentHP}/{MaxHP}, Mana: {CurrentMana}/{Mana}, Damage: {DmgAttack}, Weapon Level: {WeaponLevel}");
-            CombatLogger.AddLog(UIConfig.General.MsgAbilities);
-
-            if (!this.Abilities.Any())
-            {
-                CombatLogger.AddLog(UIConfig.General.MsgAbilitiesNone);
-            }
-            else
-            {
-                foreach (var ability in this.Abilities.OrderByDescending(a => a.Rarity).ToList())
-                {
-                    CombatLogger.AddLog($" - {ability.Name} [{ability.Rarity}]");
-                }
-            }
-        }
-
         public override void TakeTurn(List<ICombatant> allies, List<ICombatant> enemies)
         {
             if (!enemies.Any()) return;

@@ -29,12 +29,6 @@ namespace HeroEngine.Core.Models
             CurrentHP = MaxHP;
         }
 
-        public override void Presentation()
-        {
-            CombatLogger.AddLog($"{Name}' turn.");
-            CombatLogger.AddLog($"Level: {Level}, HP: {CurrentHP}/{MaxHP}, Armor: {Armor}, Damage: {DmgAttack}, Battle Cry: {UIConfig.Warrior.BattleCry}");
-        }
-
         public override void TakeTurn(List<ICombatant> allies, List<ICombatant> enemies)
         {
             if (!enemies.Any()) return;

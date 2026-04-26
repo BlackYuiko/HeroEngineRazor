@@ -44,7 +44,7 @@ namespace HeroEngine.Core.Managers
         public static void DeleteHero(string name)
         {
             _heroesCache.RemoveAll(h => h.Name == name);
-            _repository.Delete(name); // Deletes from JSON
+            _repository.Delete(name);
         }
 
         /// <summary>

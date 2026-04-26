@@ -1,14 +1,14 @@
 [
   {
-    "name": "RAYODESTRUCTORDELAMUERTE",
-    "manaCost": 90,
+    "name": "Rayo Destructor",
+    "manaCost": 60,
     "type": 0,
-    "rarity": 3
+    "rarity": 2
   },
   {
-    "name": "Sanador",
-    "manaCost": 45,
+    "name": "SANADOR",
+    "manaCost": 30,
     "type": 2,
-    "rarity": 1
+    "rarity": 0
   }
 ]
