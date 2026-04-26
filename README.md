@@ -51,12 +51,15 @@ Solution:
 Expose the HeroEngine functionalities through a responsive web interface using ASP.NET Core Razor Pages.
 
 ### Key Features
-* **Index (`/`)**: A dynamic dashboard summarizing the game state and showing recently registered heroes.
-* **Heroes Directory (`/Heroes`)**: A listing of all active heroes in the tavern.
-* **Hero Details (`/Heroes/Detail/{name}`)**: Deep dive into a hero's stats and equipped abilities.
-* **Hero Recruitment (`/Heroes/Create`)**: Form-based creation using Razor Tag Helpers and DataAnnotations for validation.
-* **Combat Arena (`/Combat`)**: Web-based execution of the polymorphic auto-battler, displaying real-time text logs.
-* **File Management (`/Files`)**: A portal to manage and review the persistence layer.
+* **Index (`/`)**: A dynamic dashboard summarizing the game state, total hero count, and showing recently registered heroes with quick actions.
+* **Heroes Directory (`/Heroes`)**: A complete listing of all active heroes in the tavern, including functionality to permanently delete them.
+* **Hero Details (`/Heroes/Detail/{name}`)**: Deep dive into a specific hero's stats, level, and their currently equipped abilities.
+* **Hero Recruitment (`/Heroes/Create`)**: Form-based creation using Razor Tag Helpers and DataAnnotations for robust validation.
+* **Abilities Directory (`/Abilities`)**: A catalog displaying all available abilities in the game, categorized by type, rarity, and mana cost.
+* **Assign Ability (`/Abilities/Assign`)**: Dynamic functionality allowing the Council to strategically equip specific abilities to their recruited heroes.
+* **Grimoire of Knowledge (`/Stats`)**: A comprehensive analytics dashboard visualizing class distributions, top-tier heroes, most used abilities, and filterable combat histories.
+* **Combat Arena (`/Combat`)**: Web-based execution of the polymorphic auto-battler, displaying real-time text logs of the fights.
+* **File Management (`/Files`)**: A portal to manage, review, and interact with the game's persistence layer (JSON, CSV, XML).
 
 ---
 
@@ -77,14 +80,24 @@ Ensure all game data, combat histories, and configurations survive between appli
 ```json
 [
   {
-    "type": "Warrior",
-    "name": "Aldric",
-    "level": 3,
-    "maxHp": 150,
-    "currentHp": 150,
-    "abilities": [
-      { "name": "Thunder Smash", "type": "Attack", "rarity": "Legendary", "manaCost": 40 }
-    ]
+    "$type": "Mage",
+    "mana": 130,
+    "currentMana": 130,
+    "level": 1,
+    "dmgAttack": 25,
+    "abilities": 
+    [
+      {
+        "name": "Rayo Destructor",
+        "manaCost": 60,
+        "type": 0,
+        "rarity": 2
+      }
+    ],
+    "name": "Hugo",
+    "maxHP": 115,
+    "currentHP": 115,
+    "isAlive": true
   }
 ]
 ```
@@ -98,9 +111,9 @@ Ensure all game data, combat histories, and configurations survive between appli
 * *Example of `game_config.xml`:*
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<GameConfig>
-  <LevelMultiplier>1.15</LevelMultiplier>
-  <CriticalHitChance>0.20</CriticalHitChance>
+<GameConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <LevelMultiplier>1</LevelMultiplier>
+  <EnemyHpMultiplier>1</EnemyHpMultiplier>
   <MaxCombatRounds>20</MaxCombatRounds>
   <MaxHeroesPerBattle>4</MaxHeroesPerBattle>
 </GameConfig>
