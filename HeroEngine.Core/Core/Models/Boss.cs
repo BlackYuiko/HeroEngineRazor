@@ -2,6 +2,7 @@
 using HeroEngine.Interfaces;
 using HeroEngine.UI;
 using System;
+
 namespace HeroEngine.Core.Models
 {
     public class Boss : AEnemies

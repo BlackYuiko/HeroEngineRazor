@@ -1,21 +1,16 @@
 ﻿using HeroEngine.Core.Data;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Text;
 
 namespace HeroEngine.Core.Services
 {
     public static class CombatLogger
     {
-        // This list stores the current combat messages in memory
         private static readonly List<string> CurrentCombatLog = new();
         private const string CombatSeparator = "================ COMBAT START ================";
 
         private static string FilePath => PathConfig.GetFilePath("combat_log.txt");
 
-        // FIX: Ensure this method exists for AHeroes and other classes to call
         public static void AddLog(string message)
         {
             CurrentCombatLog.Add(message);

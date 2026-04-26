@@ -30,7 +30,6 @@ namespace HeroEngine.Web.Pages.Heroes
                 case 3: HeroManager.AddHero(new Rogue(HeroName, HeroLevel)); break;
             }
 
-            // After saving to the file/manager, redirect back to the list
             return RedirectToPage("/Heroes/Index");
         }
     }

@@ -1,0 +1,14 @@
+[
+  {
+    "name": "RAYODESTRUCTORDELAMUERTE",
+    "manaCost": 90,
+    "type": 0,
+    "rarity": 3
+  },
+  {
+    "name": "Sanador",
+    "manaCost": 45,
+    "type": 2,
+    "rarity": 1
+  }
+]

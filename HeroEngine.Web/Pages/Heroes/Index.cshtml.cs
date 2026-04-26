@@ -1,7 +1,6 @@
 using HeroEngine.Core.Managers;
 using HeroEngine.Core.Models;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Collections.Generic;
 
 namespace HeroEngine.Web.Pages.Heroes
 {

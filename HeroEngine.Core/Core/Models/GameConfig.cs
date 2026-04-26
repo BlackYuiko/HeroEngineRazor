@@ -6,10 +6,10 @@ namespace HeroEngine.Core.Models
     public class GameConfig
     {
         [XmlElement("LevelMultiplier")]
-        public double LevelMultiplier { get; set; } = 1.0; // 1.0 = Stats normales por nivel
+        public double LevelMultiplier { get; set; } = 1.0;
 
         [XmlElement("EnemyHpMultiplier")]
-        public double EnemyHpMultiplier { get; set; } = 1.0; // 1.0 = Vida base de UIConfig
+        public double EnemyHpMultiplier { get; set; } = 1.0;
 
         [XmlElement("MaxCombatRounds")]
         public int MaxCombatRounds { get; set; } = 20;

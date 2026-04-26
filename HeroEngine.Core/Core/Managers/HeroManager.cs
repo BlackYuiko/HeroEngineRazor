@@ -1,7 +1,6 @@
 ﻿using HeroEngine.Core.Data;
 using HeroEngine.Core.Models;
 using System;
-using static HeroEngine.UI.UIConfig;
 
 namespace HeroEngine.Core.Managers
 {
@@ -26,7 +25,7 @@ namespace HeroEngine.Core.Managers
         public static void AddHero(AHeroes hero)
         {
             _heroesCache.Add(hero);
-            _repository.Add(hero); // Saves to JSON automatically
+            _repository.Add(hero);
         }
 
         /// <summary>
@@ -35,7 +34,6 @@ namespace HeroEngine.Core.Managers
         /// <returns>A list containing all heroes.</returns>
         public static List<AHeroes> GetHeroes()
         {
-            // If cache is empty, try loading from file
             if (_heroesCache.Count == 0)
             {
                 Initialize();
@@ -58,16 +56,13 @@ namespace HeroEngine.Core.Managers
 
             if (hero != null)
             {
-                // 1. Añadimos a la lista del objeto en memoria
                 if (hero.Abilities == null) hero.Abilities = new List<Ability>();
 
-                // Evitar duplicados
                 if (!hero.Abilities.Any(a => a.Name == newAbility.Name))
                 {
                     hero.Abilities.Add(newAbility);
                 }
 
-                // 2. Persistencia: Guardamos toda la caché en el JSON
                 _repository.SaveAll(_heroesCache);
             }
         }

@@ -1,0 +1,62 @@
+[
+  {
+    "$type": "Mage",
+    "mana": 190,
+    "currentMana": 190,
+    "level": 3,
+    "dmgAttack": 45,
+    "abilities": [
+      {
+        "name": "RAYODESTRUCTORDELAMUERTE",
+        "manaCost": 90,
+        "type": 0,
+        "rarity": 3
+      },
+      {
+        "name": "Sanador",
+        "manaCost": 45,
+        "type": 2,
+        "rarity": 1
+      }
+    ],
+    "name": "DANIEL LA ESTRELLA DEL ROCK",
+    "maxHP": 145,
+    "currentHP": 145,
+    "isAlive": true
+  },
+  {
+    "$type": "Rogue",
+    "level": 2,
+    "dmgAttack": 55,
+    "abilities": [],
+    "name": "ASTARION",
+    "maxHP": 140,
+    "currentHP": 140,
+    "isAlive": true
+  },
+  {
+    "$type": "Mage",
+    "mana": 190,
+    "currentMana": 190,
+    "level": 3,
+    "dmgAttack": 45,
+    "abilities": [
+      {
+        "name": "Sanador",
+        "manaCost": 45,
+        "type": 2,
+        "rarity": 1
+      },
+      {
+        "name": "RAYODESTRUCTORDELAMUERTE",
+        "manaCost": 90,
+        "type": 0,
+        "rarity": 3
+      }
+    ],
+    "name": "GALE",
+    "maxHP": 145,
+    "currentHP": 145,
+    "isAlive": true
+  }
+]

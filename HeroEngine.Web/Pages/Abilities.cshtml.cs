@@ -4,7 +4,6 @@ using HeroEngine.Core.Models;
 using HeroEngine.UI;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Collections.Generic; // Asegúrate de tener este para List<>
 
 namespace HeroEngine.Web.Pages 
 {

@@ -2,8 +2,6 @@
 using HeroEngine.Core.Services;
 using HeroEngine.Interfaces;
 using HeroEngine.UI;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text.Json.Serialization;
 
 namespace HeroEngine.Core.Models
@@ -14,9 +12,6 @@ namespace HeroEngine.Core.Models
         public int CurrentMana { get; set; }
         public static int WeaponLevel { get; set; } = 5;
 
-        // 1. EL TRUCO MAESTRO: Implementación explícita de la interfaz.
-        // Esto complace a 'IAbilityUser' sin crear una propiedad que confunda al JSON 
-        // ni choque con la lista pública 'Abilities' de 'AHeroes'.
         [JsonIgnore]
         IReadOnlyList<IAbility> IAbilityUser.Abilities => this.Abilities.Cast<IAbility>().ToList();
 
@@ -40,7 +35,6 @@ namespace HeroEngine.Core.Models
         {
             if (ability is Ability concreteAbility)
             {
-                // 2. Usamos directamente la lista heredada de la clase base (AHeroes)
                 if (!this.Abilities.Any(a => a.Name == concreteAbility.Name))
                 {
                     this.Abilities.Add(concreteAbility);
@@ -70,7 +64,6 @@ namespace HeroEngine.Core.Models
             CombatLogger.AddLog($"Level: {Level}, HP: {CurrentHP}/{MaxHP}, Mana: {CurrentMana}/{Mana}, Damage: {DmgAttack}, Weapon Level: {WeaponLevel}");
             CombatLogger.AddLog(UIConfig.General.MsgAbilities);
 
-            // 3. Leemos directamente la lista heredada para mostrar las habilidades
             if (!this.Abilities.Any())
             {
                 CombatLogger.AddLog(UIConfig.General.MsgAbilitiesNone);
@@ -90,7 +83,6 @@ namespace HeroEngine.Core.Models
 
             var target = enemies.First();
 
-            // 4. Comprobamos la lista heredada para la lógica del auto-batallador
             if (this.Abilities.Any())
             {
                 var castableAbility = this.Abilities.FirstOrDefault(a => CurrentMana >= a.ManaCost);

@@ -2,7 +2,6 @@
 using HeroEngine.Interfaces;
 using HeroEngine.UI;
 using System;
-using System.Collections.Generic;
 
 namespace HeroEngine.Core.Models
 {

@@ -1,8 +1,5 @@
 ﻿using HeroEngine.Core.Models;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Text;
 
 namespace HeroEngine.Core.Data
@@ -53,12 +50,10 @@ namespace HeroEngine.Core.Data
             {
                 if (string.IsNullOrWhiteSpace(lines[i])) continue;
 
-                // FIX: Use our manual parser instead of a simple .Split(',')
                 string[] columns = ParseCsvLine(lines[i]);
 
                 if (columns.Length >= 7)
                 {
-                    // Use TryParse to avoid app crashes if data is corrupted
                     int.TryParse(columns[4], out int rounds);
                     int.TryParse(columns[5], out int damage);
 

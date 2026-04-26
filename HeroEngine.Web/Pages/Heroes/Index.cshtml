@@ -20,7 +20,7 @@ else
                 <div>
                     <strong>@hero.Name</strong> - <span class="badge bg-secondary">@hero.GetType().Name</span>
                     <br />
-                    <small>Level: @hero.GetType().GetProperty("Level", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)?.GetValue(hero) | HP: @hero.CurrentHP</small>
+                    <small>Level: @hero.Level | HP: @hero.CurrentHP</small>
                 </div>
                 <a asp-page="/Heroes/Detail" asp-route-name="@hero.Name" class="btn btn-sm btn-info">Details</a>
             </li>

@@ -27,7 +27,6 @@ else
             <select asp-for="SelectedHeroName" class="form-select">
                 @foreach (var hero in Model.EligibleHeroes)
                 {
-                    // Casting to AHeroes to access the Name property
                     var heroModel = hero as HeroEngine.Core.Models.AHeroes;
                     if (heroModel != null)
                     {

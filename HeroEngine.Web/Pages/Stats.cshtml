@@ -1,0 +1,164 @@
+﻿@page
+@model HeroEngine.Web.Pages.StatsModel
+@{
+    ViewData["Title"] = "The Knowledge's Grimoire";
+}
+
+<div class="container mt-4">
+    <h1 class="text-center mb-5"><i class="bi bi-journal-bookmark-fill text-warning"></i>The Knowledge's Grimoire</h1>
+
+    <div class="row mb-4">
+        <div class="col-md-6 mb-3">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0"><i class="bi bi-trophy-fill"></i> Top 3 Heroes by Level</h4>
+                </div>
+                <div class="card-body">
+                    @if (Model.TopHeroes.Any())
+                    {
+                        <ul class="list-group list-group-flush">
+                            @foreach (var hero in Model.TopHeroes)
+                            {
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <strong>@hero.Name</strong>
+                                    <span class="badge bg-success rounded-pill">Lvl @hero.Level</span>
+                                </li>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <p class="text-muted">No heroes available in the tavern.</p>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-info text-white">
+                    <h4 class="mb-0"><i class="bi bi-magic"></i> Most Common Abilities</h4>
+                </div>
+                <div class="card-body">
+                    @if (Model.CommonAbilities.Any())
+                    {
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Ability Name</th>
+                                    <th class="text-end">Times Equipped</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var ability in Model.CommonAbilities)
+                                {
+                                    <tr>
+                                        <td>@ability.Key</td>
+                                        <td class="text-end">@ability.Value</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    }
+                    else
+                    {
+                        <p class="text-muted">No abilities found.</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="card shadow-sm">
+                <div class="card-header bg-secondary text-white">
+                    <h4 class="mb-0"><i class="bi bi-pie-chart-fill"></i> Hero Class Distribution</h4>
+                </div>
+                <div class="card-body">
+                    @if (Model.HeroDistribution.Any())
+                    {
+                        <table class="table table-bordered table-striped text-center">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Class</th>
+                                    <th>Total Count</th>
+                                    <th>Percentage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var dist in Model.HeroDistribution)
+                                {
+                                    <tr>
+                                        <td><strong>@dist.Key</strong></td>
+                                        <td>@dist.Value.Count</td>
+                                        <td>
+                                            <div class="progress" style="height: 20px;">
+                                                <div class="progress-bar bg-success" role="progressbar" style="width: @dist.Value.Percentage.ToString(System.Globalization.CultureInfo.InvariantCulture)%;" aria-valuenow="@dist.Value.Percentage" aria-valuemin="0" aria-valuemax="100">
+                                                    @dist.Value.Percentage%
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    }
+                    else
+                    {
+                        <p class="text-muted">No data available.</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+            <h4 class="mb-0"><i class="bi bi-shield-shaded"></i> Combat History</h4>
+            <form method="get" class="d-flex">
+                <select name="FilterResult" class="form-select form-select-sm me-2" asp-for="FilterResult">
+                    <option value="All">All Combats</option>
+                    <option value="Victory">Victories</option>
+                    <option value="Defeat">Defeats</option>
+                </select>
+                <button type="submit" class="btn btn-sm btn-light">Filter</button>
+            </form>
+        </div>
+        <div class="card-body">
+            @if (Model.CombatHistory.Any())
+            {
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Date</th>
+                                <th>Result</th>
+                                <th>Rounds</th>
+                                <th>Total Dmg</th>
+                                <th>MVP</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var stat in Model.CombatHistory)
+                            {
+                                string rowClass = stat.Result.Equals("Victory", StringComparison.OrdinalIgnoreCase) ? "table-success" : "table-danger";
+                                <tr class="@rowClass">
+                                    <td>@stat.Date.ToString("yyyy-MM-dd HH:mm")</td>
+                                    <td><strong>@stat.Result.ToUpper()</strong></td>
+                                    <td>@stat.TotalRounds</td>
+                                    <td>@stat.TotalDamageDealt</td>
+                                    <td>@stat.MostEffectiveHero</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-info">No combat records match the selected filter.</div>
+            }
+        </div>
+    </div>
+</div>

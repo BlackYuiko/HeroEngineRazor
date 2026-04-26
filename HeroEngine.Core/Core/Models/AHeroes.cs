@@ -15,13 +15,10 @@ namespace HeroEngine.Core.Models
     /// Provides common behavior and ability-related actions.
     /// </summary>
     public abstract class AHeroes : ACharacters
-    {
-        // FIX: These must be public for System.Text.Json to map them to the constructor parameters!
-        public int Level { get; set; }
+    {        public int Level { get; set; }
         public int DmgAttack { get; set; }
         public List<Ability> Abilities { get; set; } = new List<Ability>();
 
-        // We use [JsonConstructor] to tell the deserializer to use this specific constructor
         [JsonConstructor]
         protected AHeroes(string name, int level) : base(name)
         {

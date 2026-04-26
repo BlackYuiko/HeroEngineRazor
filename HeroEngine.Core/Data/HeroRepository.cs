@@ -1,9 +1,5 @@
 ﻿using HeroEngine.Core.Models;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Text.Json;
-using System.Text.Json.Serialization;
 
 namespace HeroEngine.Core.Data
 {
@@ -16,7 +12,6 @@ namespace HeroEngine.Core.Data
 
         public HeroRepository()
         {
-            // Configure JSON to be readable and use camelCase properties
             _jsonOptions = new JsonSerializerOptions
             {
                 WriteIndented = true,

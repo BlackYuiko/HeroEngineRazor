@@ -1,7 +1,5 @@
 ﻿using HeroEngine.Core.Data;
 using HeroEngine.Core.Models;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace HeroEngine.Core.Managers
 {
@@ -17,9 +15,7 @@ namespace HeroEngine.Core.Managers
 
         public static void AddAbility(Ability ability)
         {
-            // Guardar en memoria
             _abilitiesCache.Add(ability);
-            // Guardar en JSON (El repo ya comprueba si existe)
             _repository.Add(ability);
         }
 

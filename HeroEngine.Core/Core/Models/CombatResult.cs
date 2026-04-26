@@ -10,7 +10,7 @@ namespace HeroEngine.Core.Models
         public DateTime Date { get; set; }
         public string ParticipatingHeroes { get; set; } = string.Empty;
         public string ParticipatingEnemies { get; set; } = string.Empty;
-        public string Result { get; set; } = string.Empty; // Victory / Defeat
+        public string Result { get; set; } = string.Empty;
         public int TotalRounds { get; set; }
         public int TotalDamageDealt { get; set; }
         public string MostEffectiveHero { get; set; } = string.Empty;
