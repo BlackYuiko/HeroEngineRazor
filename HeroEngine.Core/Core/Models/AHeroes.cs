@@ -26,11 +26,6 @@ namespace HeroEngine.Core.Models
         }
 
         /// <summary>
-        /// Displays the hero information in a formatted way.
-        /// </summary>
-        public abstract void Presentation();
-
-        /// <summary>
         /// Performs a basic attack against a target, dealing damage.
         /// </summary>
         protected virtual void BasicAttack(ICombatant target)

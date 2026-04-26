@@ -1,206 +1,39 @@
 ================ COMBAT START ================
-Date/Time: 2026-04-26 12:42:50
-Participants: DANIEL LA ESTRELLA DEL ROCK, ASTARION, GALE VS Minion1, Minion2, Minion3, Elite Boss, Bug Primordial
+Date/Time: 2026-04-26 13:53:28
+Participants: Raquel, Daniel Moreno, Hugo, Daniel Muñoz VS Minion1, Minion2, Minion3, Minion4, Elite Boss, Bug Primordial
 ----------------------------------------------
 Combat starts!
 
 ==============================================
 --- ROUND 1 / 20 ---
 ==============================================
-[ENEMY] Bug Primordial > Basic attack > DANIEL LA ESTRELLA DEL ROCK > 50 dmg  |  DANIEL LA ESTRELLA DEL ROCK HP: 95/145
-[HERO] DANIEL LA ESTRELLA DEL ROCK > Ability > Minion1 > 90 dmg  |  Minion1 HP: 0/30
- DANIEL LA ESTRELLA DEL ROCK's new Mana: 100/190
-[HERO] ASTARION > Basic attack > Minion2 > 55 dmg  |  Minion2 HP: 0/30
-[HERO] GALE > Ability > GALE > Heal 45  |  GALE HP: 145/145
- GALE's new Mana: 145/190
-[ENEMY] Elite Boss > Basic attack > DANIEL LA ESTRELLA DEL ROCK > 30 dmg  |  DANIEL LA ESTRELLA DEL ROCK HP: 65/145
-[ENEMY] Minion3 > Basic attack > DANIEL LA ESTRELLA DEL ROCK > 10 dmg  |  DANIEL LA ESTRELLA DEL ROCK HP: 55/145
+[ENEMY] Bug Primordial > Basic attack > Raquel > 50 dmg  |  Raquel HP: 110/160
+[HERO] Raquel > Basic attack > Minion1 > 70 dmg  |  Minion1 HP: 0/30
+[HERO] Daniel Moreno > Basic attack > Minion2 > 50 dmg  |  Minion2 HP: 0/30
+[HERO] Hugo > Ability > Minion3 > 60 dmg  |  Minion3 HP: 0/30
+ Hugo's new Mana: 70/130
+[HERO] Daniel Muñoz > Ability > Minion4 > 60 dmg  |  Minion4 HP: 0/30
+ Daniel Muñoz's new Mana: 70/130
+[ENEMY] Elite Boss > Basic attack > Raquel > 30 dmg  |  Raquel HP: 80/160
 ==============================================
 --- ROUND 2 / 20 ---
 ==============================================
-[ENEMY] Bug Primordial > Basic attack > DANIEL LA ESTRELLA DEL ROCK > 50 dmg  |  DANIEL LA ESTRELLA DEL ROCK HP: 5/145
-[HERO] DANIEL LA ESTRELLA DEL ROCK > Ability > Minion3 > 90 dmg  |  Minion3 HP: 0/30
- DANIEL LA ESTRELLA DEL ROCK's new Mana: 10/190
-[HERO] ASTARION > Basic attack > Elite Boss > 55 dmg  |  Elite Boss HP: 45/100
-[HERO] GALE > Ability > GALE > Heal 45  |  GALE HP: 145/145
- GALE's new Mana: 100/190
-[ENEMY] Elite Boss > Basic attack > DANIEL LA ESTRELLA DEL ROCK > 30 dmg  |  DANIEL LA ESTRELLA DEL ROCK HP: 0/145
+[ENEMY] Bug Primordial > Basic attack > Raquel > 50 dmg  |  Raquel HP: 30/160
+[HERO] Raquel > Basic attack > Elite Boss > 70 dmg  |  Elite Boss HP: 30/100
+[HERO] Daniel Moreno > Basic attack > Elite Boss > 50 dmg  |  Elite Boss HP: 0/100
+[HERO] Hugo > Ability > Bug Primordial > 60 dmg  |  Bug Primordial HP: 140/200
+ Hugo's new Mana: 10/130
+[HERO] Daniel Muñoz > Ability > Bug Primordial > 60 dmg  |  Bug Primordial HP: 80/200
+ Daniel Muñoz's new Mana: 10/130
 ==============================================
 --- ROUND 3 / 20 ---
 ==============================================
-[ENEMY] Bug Primordial > Basic attack > ASTARION > 50 dmg  |  ASTARION HP: 90/140
-[HERO] ASTARION > Basic attack > Elite Boss > 55 dmg  |  Elite Boss HP: 0/100
-[HERO] GALE > Ability > GALE > Heal 45  |  GALE HP: 145/145
- GALE's new Mana: 55/190
-==============================================
---- ROUND 4 / 20 ---
-==============================================
-[ENEMY] Bug Primordial > Basic attack > ASTARION > 50 dmg  |  ASTARION HP: 40/140
-[HERO] ASTARION > Basic attack > Bug Primordial > 55 dmg  |  Bug Primordial HP: 145/200
-[HERO] GALE > Ability > GALE > Heal 45  |  GALE HP: 145/145
- GALE's new Mana: 10/190
-==============================================
---- ROUND 5 / 20 ---
-==============================================
-[ENEMY] Bug Primordial > Basic attack > ASTARION > 50 dmg  |  ASTARION HP: 0/140
-[HERO] GALE > Basic attack > Bug Primordial > 45 dmg  |  Bug Primordial HP: 100/200
-==============================================
---- ROUND 6 / 20 ---
-==============================================
-[ENEMY] Bug Primordial > Basic attack > GALE > 50 dmg  |  GALE HP: 95/145
-[HERO] GALE > Basic attack > Bug Primordial > 45 dmg  |  Bug Primordial HP: 55/200
-==============================================
---- ROUND 7 / 20 ---
-==============================================
-[ENEMY] Bug Primordial > Basic attack > GALE > 50 dmg  |  GALE HP: 45/145
-[HERO] GALE > Basic attack > Bug Primordial > 45 dmg  |  Bug Primordial HP: 10/200
-==============================================
---- ROUND 8 / 20 ---
-==============================================
-[ENEMY] Bug Primordial > Basic attack > GALE > 50 dmg  |  GALE HP: 0/145
-Combat finished.
-----------------------------------------------
-Result: DEFEAT! The enemies won.
-==============================================
-
-================ COMBAT START ================
-Date/Time: 2026-04-26 13:10:00
-Participants: DANIEL LA ESTRELLA DEL ROCK, ASTARION, GALE VS Minion1, Minion2, Minion3, Elite Boss, Bug Primordial
-----------------------------------------------
-Combat starts!
-
-==============================================
---- ROUND 1 / 20 ---
-==============================================
-[ENEMY] Bug Primordial > Basic attack > DANIEL LA ESTRELLA DEL ROCK > 50 dmg  |  DANIEL LA ESTRELLA DEL ROCK HP: 95/145
-[HERO] DANIEL LA ESTRELLA DEL ROCK > Ability > Minion1 > 90 dmg  |  Minion1 HP: 0/30
- DANIEL LA ESTRELLA DEL ROCK's new Mana: 100/190
-[HERO] ASTARION > Basic attack > Minion2 > 55 dmg  |  Minion2 HP: 0/30
-[HERO] GALE > Ability > GALE > Heal 45  |  GALE HP: 145/145
- GALE's new Mana: 145/190
-[ENEMY] Elite Boss > Basic attack > DANIEL LA ESTRELLA DEL ROCK > 30 dmg  |  DANIEL LA ESTRELLA DEL ROCK HP: 65/145
-[ENEMY] Minion3 > Basic attack > DANIEL LA ESTRELLA DEL ROCK > 10 dmg  |  DANIEL LA ESTRELLA DEL ROCK HP: 55/145
-==============================================
---- ROUND 2 / 20 ---
-==============================================
-[ENEMY] Bug Primordial > Basic attack > DANIEL LA ESTRELLA DEL ROCK > 50 dmg  |  DANIEL LA ESTRELLA DEL ROCK HP: 5/145
-[HERO] DANIEL LA ESTRELLA DEL ROCK > Ability > Minion3 > 90 dmg  |  Minion3 HP: 0/30
- DANIEL LA ESTRELLA DEL ROCK's new Mana: 10/190
-[HERO] ASTARION > Basic attack > Elite Boss > 55 dmg  |  Elite Boss HP: 45/100
-[HERO] GALE > Ability > GALE > Heal 45  |  GALE HP: 145/145
- GALE's new Mana: 100/190
-[ENEMY] Elite Boss > Basic attack > DANIEL LA ESTRELLA DEL ROCK > 30 dmg  |  DANIEL LA ESTRELLA DEL ROCK HP: 0/145
-==============================================
---- ROUND 3 / 20 ---
-==============================================
-[ENEMY] Bug Primordial > Basic attack > ASTARION > 50 dmg  |  ASTARION HP: 90/140
-[HERO] ASTARION > Basic attack > Elite Boss > 55 dmg  |  Elite Boss HP: 0/100
-[HERO] GALE > Ability > GALE > Heal 45  |  GALE HP: 145/145
- GALE's new Mana: 55/190
-==============================================
---- ROUND 4 / 20 ---
-==============================================
-[ENEMY] Bug Primordial > Basic attack > ASTARION > 50 dmg  |  ASTARION HP: 40/140
-[HERO] ASTARION > Basic attack > Bug Primordial > 55 dmg  |  Bug Primordial HP: 145/200
-[HERO] GALE > Ability > GALE > Heal 45  |  GALE HP: 145/145
- GALE's new Mana: 10/190
-==============================================
---- ROUND 5 / 20 ---
-==============================================
-[ENEMY] Bug Primordial > Basic attack > ASTARION > 50 dmg  |  ASTARION HP: 0/140
-[HERO] GALE > Basic attack > Bug Primordial > 45 dmg  |  Bug Primordial HP: 100/200
-==============================================
---- ROUND 6 / 20 ---
-==============================================
-[ENEMY] Bug Primordial > Basic attack > GALE > 50 dmg  |  GALE HP: 95/145
-[HERO] GALE > Basic attack > Bug Primordial > 45 dmg  |  Bug Primordial HP: 55/200
-==============================================
---- ROUND 7 / 20 ---
-==============================================
-[ENEMY] Bug Primordial > Basic attack > GALE > 50 dmg  |  GALE HP: 45/145
-[HERO] GALE > Basic attack > Bug Primordial > 45 dmg  |  Bug Primordial HP: 10/200
-==============================================
---- ROUND 8 / 20 ---
-==============================================
-[ENEMY] Bug Primordial > Basic attack > GALE > 50 dmg  |  GALE HP: 0/145
-Combat finished.
-----------------------------------------------
-Result: DEFEAT! The enemies won.
-==============================================
-
-================ COMBAT START ================
-Date/Time: 2026-04-26 13:12:10
-Participants: DANIEL LA ESTRELLA DEL ROCK, ASTARION, GALE VS Minion1, Minion2, Minion3, Elite Boss, Bug Primordial
-----------------------------------------------
-Combat starts!
-
+[ENEMY] Bug Primordial > Basic attack > Raquel > 50 dmg  |  Raquel HP: 0/160
+[HERO] Daniel Moreno > Basic attack > Bug Primordial > 50 dmg  |  Bug Primordial HP: 30/200
+[HERO] Hugo > Basic attack > Bug Primordial > 25 dmg  |  Bug Primordial HP: 5/200
+[HERO] Daniel Muñoz > Basic attack > Bug Primordial > 25 dmg  |  Bug Primordial HP: 0/200
 Combat finished.
 ----------------------------------------------
 Result: VICTORY! Heroes prevailed.
-==============================================
-
-================ COMBAT START ================
-Date/Time: 2026-04-26 13:13:02
-Participants: DANIEL LA ESTRELLA DEL ROCK, ASTARION, GALE VS Minion1, Minion2, Minion3, Elite Boss, Bug Primordial
-----------------------------------------------
-Combat starts!
-
-==============================================
---- ROUND 1 / 20 ---
-==============================================
-[ENEMY] Bug Primordial > Basic attack > DANIEL LA ESTRELLA DEL ROCK > 50 dmg  |  DANIEL LA ESTRELLA DEL ROCK HP: 95/145
-[HERO] DANIEL LA ESTRELLA DEL ROCK > Ability > Minion1 > 90 dmg  |  Minion1 HP: 0/30
- DANIEL LA ESTRELLA DEL ROCK's new Mana: 100/190
-[HERO] ASTARION > Basic attack > Minion2 > 55 dmg  |  Minion2 HP: 0/30
-[HERO] GALE > Ability > GALE > Heal 45  |  GALE HP: 145/145
- GALE's new Mana: 145/190
-[ENEMY] Elite Boss > Basic attack > DANIEL LA ESTRELLA DEL ROCK > 30 dmg  |  DANIEL LA ESTRELLA DEL ROCK HP: 65/145
-[ENEMY] Minion3 > Basic attack > DANIEL LA ESTRELLA DEL ROCK > 10 dmg  |  DANIEL LA ESTRELLA DEL ROCK HP: 55/145
-==============================================
---- ROUND 2 / 20 ---
-==============================================
-[ENEMY] Bug Primordial > Basic attack > DANIEL LA ESTRELLA DEL ROCK > 50 dmg  |  DANIEL LA ESTRELLA DEL ROCK HP: 5/145
-[HERO] DANIEL LA ESTRELLA DEL ROCK > Ability > Minion3 > 90 dmg  |  Minion3 HP: 0/30
- DANIEL LA ESTRELLA DEL ROCK's new Mana: 10/190
-[HERO] ASTARION > Basic attack > Elite Boss > 55 dmg  |  Elite Boss HP: 45/100
-[HERO] GALE > Ability > GALE > Heal 45  |  GALE HP: 145/145
- GALE's new Mana: 100/190
-[ENEMY] Elite Boss > Basic attack > DANIEL LA ESTRELLA DEL ROCK > 30 dmg  |  DANIEL LA ESTRELLA DEL ROCK HP: 0/145
-==============================================
---- ROUND 3 / 20 ---
-==============================================
-[ENEMY] Bug Primordial > Basic attack > ASTARION > 50 dmg  |  ASTARION HP: 90/140
-[HERO] ASTARION > Basic attack > Elite Boss > 55 dmg  |  Elite Boss HP: 0/100
-[HERO] GALE > Ability > GALE > Heal 45  |  GALE HP: 145/145
- GALE's new Mana: 55/190
-==============================================
---- ROUND 4 / 20 ---
-==============================================
-[ENEMY] Bug Primordial > Basic attack > ASTARION > 50 dmg  |  ASTARION HP: 40/140
-[HERO] ASTARION > Basic attack > Bug Primordial > 55 dmg  |  Bug Primordial HP: 145/200
-[HERO] GALE > Ability > GALE > Heal 45  |  GALE HP: 145/145
- GALE's new Mana: 10/190
-==============================================
---- ROUND 5 / 20 ---
-==============================================
-[ENEMY] Bug Primordial > Basic attack > ASTARION > 50 dmg  |  ASTARION HP: 0/140
-[HERO] GALE > Basic attack > Bug Primordial > 45 dmg  |  Bug Primordial HP: 100/200
-==============================================
---- ROUND 6 / 20 ---
-==============================================
-[ENEMY] Bug Primordial > Basic attack > GALE > 50 dmg  |  GALE HP: 95/145
-[HERO] GALE > Basic attack > Bug Primordial > 45 dmg  |  Bug Primordial HP: 55/200
-==============================================
---- ROUND 7 / 20 ---
-==============================================
-[ENEMY] Bug Primordial > Basic attack > GALE > 50 dmg  |  GALE HP: 45/145
-[HERO] GALE > Basic attack > Bug Primordial > 45 dmg  |  Bug Primordial HP: 10/200
-==============================================
---- ROUND 8 / 20 ---
-==============================================
-[ENEMY] Bug Primordial > Basic attack > GALE > 50 dmg  |  GALE HP: 0/145
-Combat finished.
-----------------------------------------------
-Result: DEFEAT! The enemies won.
 ==============================================
 

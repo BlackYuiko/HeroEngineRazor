@@ -22,9 +22,5 @@ namespace HeroEngine.Interfaces
         /// <param name="target">The target receiving the effect.</param>
         void Use(AHeroes caster, ICombatant target);
 
-        /// <summary>
-        /// Displays formatted information about the ability.
-        /// </summary>
-        void AbilityPresentation();
     }
 }

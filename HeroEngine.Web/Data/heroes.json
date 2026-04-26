@@ -1,62 +1,66 @@
 [
   {
-    "$type": "Mage",
-    "mana": 190,
-    "currentMana": 190,
-    "level": 3,
-    "dmgAttack": 45,
-    "abilities": [
-      {
-        "name": "RAYODESTRUCTORDELAMUERTE",
-        "manaCost": 90,
-        "type": 0,
-        "rarity": 3
-      },
-      {
-        "name": "Sanador",
-        "manaCost": 45,
-        "type": 2,
-        "rarity": 1
-      }
-    ],
-    "name": "DANIEL LA ESTRELLA DEL ROCK",
-    "maxHP": 145,
-    "currentHP": 145,
-    "isAlive": true
-  },
-  {
     "$type": "Rogue",
-    "level": 2,
-    "dmgAttack": 55,
+    "level": 3,
+    "dmgAttack": 70,
     "abilities": [],
-    "name": "ASTARION",
-    "maxHP": 140,
-    "currentHP": 140,
+    "name": "Raquel",
+    "maxHP": 160,
+    "currentHP": 160,
+    "isAlive": true
+  },
+  {
+    "$type": "Warrior",
+    "level": 2,
+    "dmgAttack": 50,
+    "abilities": [],
+    "name": "Daniel Moreno",
+    "maxHP": 150,
+    "currentHP": 150,
     "isAlive": true
   },
   {
     "$type": "Mage",
-    "mana": 190,
-    "currentMana": 190,
-    "level": 3,
-    "dmgAttack": 45,
+    "mana": 130,
+    "currentMana": 130,
+    "level": 1,
+    "dmgAttack": 25,
     "abilities": [
       {
-        "name": "Sanador",
-        "manaCost": 45,
-        "type": 2,
-        "rarity": 1
-      },
-      {
-        "name": "RAYODESTRUCTORDELAMUERTE",
-        "manaCost": 90,
+        "name": "Rayo Destructor",
+        "manaCost": 60,
         "type": 0,
-        "rarity": 3
+        "rarity": 2
       }
     ],
-    "name": "GALE",
-    "maxHP": 145,
-    "currentHP": 145,
+    "name": "Hugo",
+    "maxHP": 115,
+    "currentHP": 115,
+    "isAlive": true
+  },
+  {
+    "$type": "Mage",
+    "mana": 130,
+    "currentMana": 130,
+    "level": 1,
+    "dmgAttack": 25,
+    "abilities": [
+      {
+        "name": "Rayo Destructor",
+        "manaCost": 60,
+        "type": 0,
+        "rarity": 2
+      },
+      {
+        "name": "SANADOR",
+        "manaCost": 30,
+        "type": 2,
+        "rarity": 0
+      }
+    ],
+    "name": "Daniel Mu\u00F1oz",
+    "maxHP": 115,
+    "currentHP": 115,
     "isAlive": true
   }
 ]

@@ -73,11 +73,5 @@ namespace HeroEngine.Core.Models
                 _ => UIConfig.AbilityUI.RarityBaseMultiplier
             };
         }
-
-        public void AbilityPresentation()
-        {
-            CombatLogger.AddLog($"==={Name}===");
-            CombatLogger.AddLog($"Type: {Type}, Rarity: {Rarity}, ManaCost: {ManaCost}");
-        }
     }
 }
